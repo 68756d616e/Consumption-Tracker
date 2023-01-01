@@ -15,7 +15,9 @@ print("Welcome to your Consumption tracker")
 # Consumption tracker list
 tracker = ['a','b','c']
 # Targert tracker list
-targets = []
+targets = ['a','b','c']
+# The daily intake list
+intake = ['a','b','c']
 
 while True:
     # The initial questions provides the options view or update
@@ -51,8 +53,30 @@ while True:
         else:
             print("Please input in lowercase view or update")
 
+    # The user can view or edit their targets
     elif question == 'target':
-        print("target")
+        target_question = input("Would you like to view or edit your target! ")
+        if target_question == 'view':
+            print(targets)
+        elif target_question == 'edit':
+            edit_question = input("Regarding editing your target, would you like to 'add' or 'remove' ? :")
 
+    # The user will be able to add to their targets list        
+            if edit_question == 'add':
+                print(targets)
+                add_question = input("What would you like to add to your target list? ")
+                b = targets.append(add_question)
+                print(targets)
+
+    # The user will be able to remove from the targets list
+            elif edit_question == 'remove':
+                print(targets)
+                remove_question = input("What would you like to remove? ")
+                c = targets.remove(remove_question)
+                print(targets)
+            else:
+                print("Please type in lowercase either add or remove")
+
+    # I will complete this soon
     elif question == 'intake':
         print("intake")
